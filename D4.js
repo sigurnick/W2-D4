@@ -98,7 +98,7 @@ function epify(s) {
     return "EPICODE ".concat(s);
   }
 }
-result = epify("EPICODE AHAHciaoooo");
+result = epify("ciao");
 console.log(result);
 
 /* ESERCIZIO 6
@@ -127,38 +127,16 @@ console.log(result);
 */
 console.log("--------Esercizio 7--------");
 
-// function reverseString(s){
+function reverseString(s){
+    let result = ""
+    for(let i=s.length -1; i>=0;i--){
+        result += s.charAt(i)
+    }
+    return result
+}
 
-//     let sCopy = s
-//     let sCopy2 = s
-//     for(let i=0;i<s.length;i++){
-        
-//         sCopy2[i] = sCopy[s.length - i]
-
-//     }
-//     return sCopy2
-
-// }
-
-// result = reverseString("gattooo")
-// console.log(result);
-
-// let s = "gatto"
-// let sCopy = s
-// let sCopy2 = s
-// let characterToChange
-// let newCharacter
-
-// for(let i=0;i<s.length;i++){
-        
-
-//     characterToChange = s.charAt(i)
-//     newCharacter = sCopy.charAt(s.length-1)
-//     newString = s.replace(characterToChange, newCharacter);
-
-// }
-// console.log(newString);
-
+result = reverseString("ciao")
+console.log(result);
 
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
@@ -166,31 +144,49 @@ console.log("--------Esercizio 7--------");
 */
 console.log("--------Esercizio 8--------");
 
+function upperFirst(s) {
+  let newString = s.split(" ");
 
-function upperFirst(s){
-    let newString = s.split(" ")
-
-    for(let i=0; i<newString.length;i++){
-        newString[i] = newString[i].charAt(0).toUpperCase() + newString[i].substring(1)
-    
-    }
-    return newString.join(" ")
-
+  for (let i = 0; i < newString.length; i++) {
+    newString[i] =
+      newString[i].charAt(0).toUpperCase() + newString[i].substring(1);
+  }
+  return newString.join(" ");
 }
-result = upperFirst("ciao come stai")
+result = upperFirst("ciao come stai");
 console.log(result);
-
-
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
  della stringa originale.
 */
+console.log("--------Esercizio 9--------");
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+function cutString(string){
+
+    let result = string.slice(1,string.length-1)
+    return result
+
+}
+
+result = cutString("gattino")
+console.log(result);
+
 
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+console.log("--------Esercizio 10--------");
+
+function giveMeRandom(n){
+    let result = []
+    for(let i=0;i<n;i++){
+        result.push(Math.floor(Math.random()*11))
+    }
+    return result
+}
+
+result = giveMeRandom(5)
+console.log(result);
+
